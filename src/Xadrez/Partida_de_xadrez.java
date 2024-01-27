@@ -24,7 +24,7 @@ public Peca_de_xadrez[][] getPecas(){
 }
 private void initialSetup(){
 	tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.BLACK), new Posicao(2,1));
-	tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.RED), new Posicao(0,5));
+	tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.RED), new Posicao(0,4));
 	tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.BLACK), new Posicao(7,4));
 }
 }
