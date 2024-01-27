@@ -35,5 +35,8 @@ public Pecas pecas(int linhas, int colunas) {
 public Pecas pecas(Posicao posicao) {
 	return pecas[posicao.getLinha()][posicao.getColuna()];
 }
-
+public void colocarPeca(Pecas peca, Posicao posicao) {
+	pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+	peca.posicao = posicao;
+}
 }
