@@ -1,34 +1,34 @@
 package Camada_de_tabuleiro;
 
 public class Posicao {
-private int linhas;
-private int colunas;
+private int linha;
+private int coluna;
 
-public Posicao(int linhas, int colunas) {
+public Posicao(int linha, int coluna) {
 
-	this.linhas = linhas;
-	this.colunas = colunas;
+	this.linha = linha;
+	this.coluna = coluna;
 }
 
-public int getLinhas() {
-	return linhas;
+public int getLinha() {
+	return linha;
 }
 
-public void setLinhas(int linhas) {
-	this.linhas = linhas;
+public void setLinha(int linha) {
+	this.linha = linha;
 }
 
-public int getColunas() {
-	return colunas;
+public int getColuna() {
+	return coluna;
 }
 
-public void setColunas(int colunas) {
-	this.colunas = colunas;
+public void setColuna(int coluna) {
+	this.coluna = coluna;
 }
 
 	@Override
 public String toString() {
-		return linhas + ", "+ colunas;
+		return linha + ", "+ coluna;
 	}
 
 }
