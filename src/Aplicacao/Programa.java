@@ -1,7 +1,10 @@
 package Aplicacao;
 
+import Camada_de_tabuleiro.Posicao;
+
 public class Programa {
 	public static void main(String[] args) {
-		System.out.println("Olá mundo!!!");
+		Posicao pos = new Posicao(3, 9);
+		System.out.println(pos);
 	}
 }
