@@ -25,8 +25,18 @@ private void colocarNovaPeca(char coluna, int linha, Peca_de_xadrez peca) {
 	tabuleiro.colocarPeca(peca, new Xadrez_posicao (coluna, linha).toPosicao());
 }
 private void initialSetup(){
-	colocarNovaPeca('b', 6 ,new Torre(tabuleiro, Cor.BLACK));
-	colocarNovaPeca('e', 4 ,new Rei(tabuleiro, Cor.RED));
-	colocarNovaPeca('e', 8 ,new Torre(tabuleiro, Cor.BLACK));
+	colocarNovaPeca('c', 1,new Torre(tabuleiro, Cor.RED));
+	colocarNovaPeca('c', 2,new Rei(tabuleiro, Cor.RED));
+	colocarNovaPeca('d', 2,new Torre(tabuleiro, Cor.RED));
+	colocarNovaPeca('e', 2,new Torre(tabuleiro, Cor.RED));
+	colocarNovaPeca('e', 1,new Rei(tabuleiro, Cor.RED));
+	colocarNovaPeca('d', 1,new Torre(tabuleiro, Cor.RED));
+	
+	colocarNovaPeca('c', 7,new Torre(tabuleiro, Cor.YELLOW));
+	colocarNovaPeca('c', 8,new Rei(tabuleiro, Cor.YELLOW));
+	colocarNovaPeca('d', 7,new Torre(tabuleiro, Cor.YELLOW));
+	colocarNovaPeca('e', 7,new Torre(tabuleiro, Cor.YELLOW));
+	colocarNovaPeca('e', 8,new Rei(tabuleiro, Cor.YELLOW));
+	colocarNovaPeca('d', 8,new Torre(tabuleiro, Cor.YELLOW));
 }
 }
