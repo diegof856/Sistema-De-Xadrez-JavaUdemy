@@ -27,26 +27,26 @@ public int getColunas() {
 public Pecas pecas(int linhas, int colunas) {
 	
 	if(!posicaoExiste(linhas,colunas)) {
-		throw new Tabuleiro_excecao("Posicao não esta presente no tabuleiro");
+		throw new Tabuleiro_excecao("Posicao nao esta presente no tabuleiro");
 	}
 	return pecas[linhas][colunas];
 }
 public Pecas pecas(Posicao posicao) {
 	if(!posicaoExiste(posicao)) {
-		throw new Tabuleiro_excecao("Posicao não esta presente no tabuleiro");
+		throw new Tabuleiro_excecao("Posicao nao esta presente no tabuleiro");
 	}
 	return pecas[posicao.getLinha()][posicao.getColuna()];
 }
 public void colocarPeca(Pecas peca, Posicao posicao) {
 	if(haPeca(posicao)) {
-		throw new Tabuleiro_excecao("Existe uma peça nessa posição "+ posicao);
+		throw new Tabuleiro_excecao("Existe uma peça nessa posiçao "+ posicao);
 	}
 	pecas[posicao.getLinha()][posicao.getColuna()] = peca;
 	peca.posicao = posicao;
 }
 public Pecas removerPeca(Posicao posicao) {
 	if(!posicaoExiste(posicao)) {
-		throw new Tabuleiro_excecao("Posicao não esta presente no tabuleiro");
+		throw new Tabuleiro_excecao("Posicao nao esta presente no tabuleiro");
 	}
 	if(pecas(posicao) == null) {
 		return null;
@@ -65,7 +65,7 @@ public boolean posicaoExiste(Posicao posicao) {
 }
 public boolean haPeca(Posicao posicao) {
 	if(!posicaoExiste(posicao)) {
-		throw new Tabuleiro_excecao("Posicao não esta presente no tabuleiro");
+		throw new Tabuleiro_excecao("Posicao nao esta presente no tabuleiro");
 	}
 	 return pecas(posicao) != null;
 }

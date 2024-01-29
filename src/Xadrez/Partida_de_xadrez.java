@@ -33,7 +33,10 @@ public Peca_de_xadrez executarMovimentoDePeca(Xadrez_posicao posicaoDeOrigem, Xa
 }
 private void validarPosicaoOrigem(Posicao posicao) {
 	if(!tabuleiro.haPeca(posicao)) {
-		throw new Xadrez_Excecao("Não existe peca na posicao de origem");
+		throw new Xadrez_Excecao("Nao existe peca na posicao de origem");
+	}
+	if(!tabuleiro.pecas(posicao).ePossivelTerUmMovimento()) {
+		throw new Xadrez_Excecao("Nao existe movimentos possiveis para esta peca");
 	}
 }
 
