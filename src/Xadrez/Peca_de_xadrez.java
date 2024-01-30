@@ -1,6 +1,7 @@
 package Xadrez;
 
 import Camada_de_tabuleiro.Pecas;
+import Camada_de_tabuleiro.Posicao;
 import Camada_de_tabuleiro.Tabuleiro;
 
 public abstract class Peca_de_xadrez extends Pecas {
@@ -14,7 +15,10 @@ public Peca_de_xadrez(Tabuleiro tabuleiro, Cor cor) {
 public Cor getCor() {
 	return cor;
 }
-
+protected boolean haPecasDoOponente(Posicao posicao) {
+	Peca_de_xadrez p = (Peca_de_xadrez)getTabuleiro().pecas(posicao);
+	return p != null && p.getCor() != cor;
+}
  
  
 }

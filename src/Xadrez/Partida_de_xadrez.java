@@ -28,6 +28,7 @@ public Peca_de_xadrez executarMovimentoDePeca(Xadrez_posicao posicaoDeOrigem, Xa
 	Posicao origem = posicaoDeOrigem.toPosicao();
 	Posicao destino = posicaoDeDestino.toPosicao();
 	validarPosicaoOrigem(origem);
+	validarPosicaoDestino(origem, destino);
 	Pecas pecaCapturada = fazerMovimento(origem, destino);
 	return (Peca_de_xadrez)pecaCapturada;
 }
@@ -37,6 +38,11 @@ private void validarPosicaoOrigem(Posicao posicao) {
 	}
 	if(!tabuleiro.pecas(posicao).ePossivelTerUmMovimento()) {
 		throw new Xadrez_Excecao("Nao existe movimentos possiveis para esta peca");
+	}
+}
+private void validarPosicaoDestino(Posicao origem, Posicao destino) {
+	if(!tabuleiro.pecas(origem).movimentoPossivel(destino)) {
+		throw new Xadrez_Excecao("Ha peca escolhida nao pode se mover para a posicao de destino");
 	}
 }
 
