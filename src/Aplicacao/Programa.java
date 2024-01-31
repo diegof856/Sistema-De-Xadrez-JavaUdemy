@@ -20,6 +20,11 @@ public class Programa {
 		System.out.println();
 		System.out.print("Origem: ");
 		Xadrez_posicao origem = UI.lerPosicaoXadrez(sc);
+		
+		boolean[][] movimentoPossivel = partida.movimentosPossiveis(origem);
+		UI.limparTela();
+		UI.printTabuleiro(partida.getPecas(), movimentoPossivel);
+		
 		System.out.println();
 		System.out.print("Destino: ");
 		Xadrez_posicao destino = UI.lerPosicaoXadrez(sc);

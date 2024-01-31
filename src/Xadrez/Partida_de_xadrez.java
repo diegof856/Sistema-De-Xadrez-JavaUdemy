@@ -14,6 +14,13 @@ public Partida_de_xadrez() {
 	tabuleiro = new Tabuleiro(8, 8);
 	initialSetup();
 }
+
+public boolean[][] movimentosPossiveis(Xadrez_posicao posicaoOrigem){
+	Posicao posicao = posicaoOrigem.toPosicao();
+	validarPosicaoOrigem(posicao);
+	return tabuleiro.pecas(posicao).movimentosPossiveis();
+}
+
 public Peca_de_xadrez[][] getPecas(){
 	Peca_de_xadrez[][] mat = new Peca_de_xadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
 	for (int i=0; i<tabuleiro.getLinhas(); i++) {
