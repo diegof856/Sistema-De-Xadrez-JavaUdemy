@@ -15,6 +15,7 @@ private Cor corDoJogadorAtual;
 private int turno;
 private Tabuleiro tabuleiro;
 private boolean check;
+private boolean checkMate;
 
 private List<Pecas> pecasNoTabuleiro;
 private List<Pecas> pecasCapturadas;
@@ -35,6 +36,9 @@ public Cor getCorDoJogadorAtual() {
 }
 public boolean getCheck() {
 	return check;
+}
+public boolean getCheckMate() {
+	return checkMate;
 }
 
 public boolean[][] movimentosPossiveis(Xadrez_posicao posicaoOrigem){
@@ -66,7 +70,14 @@ public Peca_de_xadrez executarMovimentoDePeca(Xadrez_posicao posicaoDeOrigem, Xa
 	}
 	
 	check = (testeDeCheck(oponente(corDoJogadorAtual))) ? true : false;
-	proximoTurno();
+	
+	if(testeDeCheckMate(oponente(corDoJogadorAtual))) {
+		checkMate = true;
+	}
+	else {
+		proximoTurno();
+	}
+	
 	
 	return (Peca_de_xadrez)pecaCapturada;
 }
@@ -143,7 +154,30 @@ private boolean testeDeCheck(Cor cor) {
 	}
 return false;
 }
-
+private boolean testeDeCheckMate(Cor cor) {
+	if(!testeDeCheck(cor)) {
+		return false;
+	}
+	List<Pecas> list = pecasNoTabuleiro.stream().filter(x -> ((Peca_de_xadrez)x).getCor() == cor).collect(Collectors.toList());
+	for (Pecas p : list) {
+		boolean [][] mat = p.movimentosPossiveis();
+		for(int i= 0; i < tabuleiro.getLinhas(); i++) {
+			for(int j = 0; j < tabuleiro.getColunas(); j++) {
+				if(mat[i][j]) {
+					Posicao origem = ((Peca_de_xadrez)p).getPosicaoXadrez().toPosicao();
+					Posicao destino = new Posicao(i, j);
+					Pecas pecasCapturada = fazerMovimento(origem, destino);
+					boolean testeCheck = testeDeCheck(cor);
+					desfazerMovimento(origem, destino, pecasCapturada);
+					if(!testeCheck) {
+						return false;
+					}
+				}
+			}
+		}
+	}
+	return true;
+}
 
 
 private void colocarNovaPeca(char coluna, int linha, Peca_de_xadrez peca) {
@@ -152,18 +186,13 @@ private void colocarNovaPeca(char coluna, int linha, Peca_de_xadrez peca) {
 }
 
 private void initialSetup(){
-	colocarNovaPeca('c', 1,new Torre(tabuleiro, Cor.VERMELHO));
-	colocarNovaPeca('c', 2,new Torre(tabuleiro, Cor.VERMELHO));
-	colocarNovaPeca('d', 2,new Torre(tabuleiro, Cor.VERMELHO));
-	colocarNovaPeca('e', 2,new Torre(tabuleiro, Cor.VERMELHO));
-	colocarNovaPeca('e', 1,new Torre(tabuleiro, Cor.VERMELHO));
-	colocarNovaPeca('d', 1,new Rei(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('h', 7,new Torre(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('d', 1,new Torre(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('e', 1,new Rei(tabuleiro, Cor.VERMELHO));
 	
-	colocarNovaPeca('c', 7,new Torre(tabuleiro, Cor.AMARELO));
-	colocarNovaPeca('c', 8,new Torre(tabuleiro, Cor.AMARELO));
-	colocarNovaPeca('d', 7,new Torre(tabuleiro, Cor.AMARELO));
-	colocarNovaPeca('e', 7,new Torre(tabuleiro, Cor.AMARELO));
-	colocarNovaPeca('e', 8,new Torre(tabuleiro, Cor.AMARELO));
-	colocarNovaPeca('d', 8,new Rei(tabuleiro, Cor.AMARELO));
+	
+	colocarNovaPeca('b', 8,new Torre(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('a', 8,new Rei(tabuleiro, Cor.AMARELO));
+	
 }
 }

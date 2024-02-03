@@ -55,9 +55,15 @@ public static void printPartida(Partida_de_xadrez partida_De_Xadrez, List<Peca_d
 	mostrarPecasCapturadas(capturada);
 	System.out.println();
 	System.out.println("Turno: "+ partida_De_Xadrez.getTurno());
+	if(!partida_De_Xadrez.getCheckMate()) {
 	System.out.println("Esperando o jogador: "+ partida_De_Xadrez.getCorDoJogadorAtual());
 	if(partida_De_Xadrez.getCheck()) {
 		System.out.println("ESTA EM CHECK!");
+	}
+	}
+	else {
+		System.out.println("CHECKMATE!!!");
+		System.out.println("Vencedor: " + partida_De_Xadrez.getCorDoJogadorAtual());
 	}
 	
 }
