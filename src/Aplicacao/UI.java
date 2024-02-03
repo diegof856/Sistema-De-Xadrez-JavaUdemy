@@ -55,7 +55,11 @@ public static void printPartida(Partida_de_xadrez partida_De_Xadrez, List<Peca_d
 	mostrarPecasCapturadas(capturada);
 	System.out.println();
 	System.out.println("Turno: "+ partida_De_Xadrez.getTurno());
-	System.out.println("Esta esperando o jogador: "+ partida_De_Xadrez.getCorDoJogadorAtual());
+	System.out.println("Esperando o jogador: "+ partida_De_Xadrez.getCorDoJogadorAtual());
+	if(partida_De_Xadrez.getCheck()) {
+		System.out.println("ESTA EM CHECK!");
+	}
+	
 }
 	public static void printTabuleiro(Peca_de_xadrez[][] pecas) {
 		for (int i = 0; i < pecas.length; i++) {
