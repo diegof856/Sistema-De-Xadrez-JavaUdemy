@@ -81,9 +81,23 @@ public Peca_de_xadrez executarMovimentoDePeca(Xadrez_posicao posicaoDeOrigem, Xa
 	
 	return (Peca_de_xadrez)pecaCapturada;
 }
+private Pecas fazerMovimento(Posicao origem, Posicao destino) {
+	Peca_de_xadrez p = (Peca_de_xadrez)tabuleiro.removerPeca(origem);
+	p.incrementandoAContagem();
+	Pecas pecaCapturada = tabuleiro.removerPeca(destino);
+	tabuleiro.colocarPeca(p, destino);
+	
+	if(pecaCapturada != null) {
+		pecasNoTabuleiro.remove(pecaCapturada);
+		pecasCapturadas.add(pecaCapturada);
+	}
+	
+	return pecaCapturada;
+}
 
 private void desfazerMovimento(Posicao origem, Posicao destino, Pecas pecaCapturada) {
-	Pecas p = tabuleiro.removerPeca(destino);
+	Peca_de_xadrez p = (Peca_de_xadrez)tabuleiro.removerPeca(destino);
+	p.decrementandoAContagem();
 	tabuleiro.colocarPeca(p, origem);
 	
 	if(pecaCapturada != null) {
@@ -111,18 +125,7 @@ private void validarPosicaoDestino(Posicao origem, Posicao destino) {
 	}
 }
 
-private Pecas fazerMovimento(Posicao origem, Posicao destino) {
-	Pecas p = tabuleiro.removerPeca(origem);
-	Pecas pecaCapturada = tabuleiro.removerPeca(destino);
-	tabuleiro.colocarPeca(p, destino);
-	
-	if(pecaCapturada != null) {
-		pecasNoTabuleiro.remove(pecaCapturada);
-		pecasCapturadas.add(pecaCapturada);
-	}
-	
-	return pecaCapturada;
-}
+
 
 private void proximoTurno() {
 	turno++;
