@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import Camada_de_tabuleiro.Pecas;
 import Camada_de_tabuleiro.Posicao;
 import Camada_de_tabuleiro.Tabuleiro;
+import Xadrez.pecas.Peao;
 import Xadrez.pecas.Rei;
 import Xadrez.pecas.Torre;
 
@@ -189,13 +190,30 @@ private void colocarNovaPeca(char coluna, int linha, Peca_de_xadrez peca) {
 }
 
 private void initialSetup(){
-	colocarNovaPeca('h', 7,new Torre(tabuleiro, Cor.VERMELHO));
-	colocarNovaPeca('d', 1,new Torre(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('a', 1,new Torre(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('e', 1,new Rei(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('h', 1,new Torre(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('a', 2,new Peao(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('b', 2,new Peao(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('c', 2,new Peao(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('d', 2,new Peao(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('e', 2,new Peao(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('f', 2,new Peao(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('g', 2,new Peao(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('h', 2,new Peao(tabuleiro, Cor.VERMELHO));
 	
 	
-	colocarNovaPeca('b', 8,new Torre(tabuleiro, Cor.AMARELO));
-	colocarNovaPeca('a', 8,new Rei(tabuleiro, Cor.AMARELO));
 	
+	colocarNovaPeca('a', 8,new Torre(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('e', 8,new Rei(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('h', 8,new Torre(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('a', 7,new Peao(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('b', 7,new Peao(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('c', 7,new Peao(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('d', 7,new Peao(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('e', 7,new Peao(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('f', 7,new Peao(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('g', 7,new Peao(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('h', 7,new Peao(tabuleiro, Cor.AMARELO));
 }
 }

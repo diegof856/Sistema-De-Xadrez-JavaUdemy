@@ -66,4 +66,6 @@ public boolean[][] movimentosPossiveis() {
 		}
 	return mat;
 }
+
+
 }
