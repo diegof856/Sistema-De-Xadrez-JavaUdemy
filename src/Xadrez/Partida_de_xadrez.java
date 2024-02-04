@@ -10,6 +10,7 @@ import Camada_de_tabuleiro.Tabuleiro;
 import Xadrez.pecas.Bispo;
 import Xadrez.pecas.Cavalo;
 import Xadrez.pecas.Peao;
+import Xadrez.pecas.Rainha;
 import Xadrez.pecas.Rei;
 import Xadrez.pecas.Torre;
 
@@ -195,6 +196,7 @@ private void initialSetup(){
 	colocarNovaPeca('a', 1,new Torre(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('b', 1,new Cavalo(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('c', 1,new Bispo(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('d', 1,new Rainha(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('e', 1,new Rei(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('f', 1,new Bispo(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('g', 1,new Cavalo(tabuleiro, Cor.VERMELHO));
@@ -213,6 +215,7 @@ private void initialSetup(){
 	colocarNovaPeca('a', 8,new Torre(tabuleiro, Cor.AMARELO));
 	colocarNovaPeca('b', 8,new Cavalo(tabuleiro, Cor.AMARELO));
 	colocarNovaPeca('c', 8,new Bispo(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('d', 8,new Rainha(tabuleiro, Cor.AMARELO));
 	colocarNovaPeca('e', 8,new Rei(tabuleiro, Cor.AMARELO));
 	colocarNovaPeca('f', 8,new Bispo(tabuleiro, Cor.AMARELO));
 	colocarNovaPeca('g', 8,new Cavalo(tabuleiro, Cor.AMARELO));
