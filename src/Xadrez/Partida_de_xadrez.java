@@ -8,6 +8,7 @@ import Camada_de_tabuleiro.Pecas;
 import Camada_de_tabuleiro.Posicao;
 import Camada_de_tabuleiro.Tabuleiro;
 import Xadrez.pecas.Bispo;
+import Xadrez.pecas.Cavalo;
 import Xadrez.pecas.Peao;
 import Xadrez.pecas.Rei;
 import Xadrez.pecas.Torre;
@@ -192,9 +193,11 @@ private void colocarNovaPeca(char coluna, int linha, Peca_de_xadrez peca) {
 
 private void initialSetup(){
 	colocarNovaPeca('a', 1,new Torre(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('b', 1,new Cavalo(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('c', 1,new Bispo(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('e', 1,new Rei(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('f', 1,new Bispo(tabuleiro, Cor.VERMELHO));
+	colocarNovaPeca('g', 1,new Cavalo(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('h', 1,new Torre(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('a', 2,new Peao(tabuleiro, Cor.VERMELHO));
 	colocarNovaPeca('b', 2,new Peao(tabuleiro, Cor.VERMELHO));
@@ -208,9 +211,11 @@ private void initialSetup(){
 	
 	
 	colocarNovaPeca('a', 8,new Torre(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('b', 8,new Cavalo(tabuleiro, Cor.AMARELO));
 	colocarNovaPeca('c', 8,new Bispo(tabuleiro, Cor.AMARELO));
 	colocarNovaPeca('e', 8,new Rei(tabuleiro, Cor.AMARELO));
 	colocarNovaPeca('f', 8,new Bispo(tabuleiro, Cor.AMARELO));
+	colocarNovaPeca('g', 8,new Cavalo(tabuleiro, Cor.AMARELO));
 	colocarNovaPeca('h', 8,new Torre(tabuleiro, Cor.AMARELO));
 	colocarNovaPeca('a', 7,new Peao(tabuleiro, Cor.AMARELO));
 	colocarNovaPeca('b', 7,new Peao(tabuleiro, Cor.AMARELO));
