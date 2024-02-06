@@ -34,8 +34,14 @@ public class Programa {
 		
 		
 				Peca_de_xadrez pecaCapturada = partida.executarMovimentoDePeca(origem,destino);
+				
 				if(pecaCapturada != null) {
 					capturada.add(pecaCapturada);
+				}
+				if(partida.getPromocao() != null) {
+					System.out.print("Entre com a letra da peca para a promocao (B/C/T/Q): ");
+					String type = sc.nextLine();
+					partida.trocarPecaPromovida(type);
 				}
 			}
 			catch(Xadrez_Excecao e) {
